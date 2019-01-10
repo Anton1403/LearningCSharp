@@ -47,7 +47,23 @@ namespace Learning
                     Console.WriteLine("Error");
                     break;
             }
-            int[] numbers = { -4, -3, -2, -1, 0, 1, 2, 3, 4 };
+            int[] arrayWithPositiveNumbers = { 1, 2, 3, 4, 5, -1, -3, -5, 8, 14, 32 };
+            int countOfPositiveNumbers = 0;
+            string positiveNumbers;
+            foreach(int number in arrayWithPositiveNumbers)
+            {
+                if( number > 0 )
+                {
+                        Console.Write(number + " ");
+                        countOfPositiveNumbers++;
+                }
+            }
+            Console.Write("- positive numbers");
+            Console.WriteLine(" ");
+            Console.WriteLine($"Count of positive numbers is {countOfPositiveNumbers}");
+
+
+            /*int[] numbers = { -4, -3, -2, -1, 0, 1, 2, 3, 4 };
 
             int n = numbers.Length;
             int x = n / 2;
@@ -61,7 +77,9 @@ namespace Learning
             foreach(int i in numbers)
             {
                 Console.Write($"{i} \t");
-            }
+            }*/
+
+
             Console.ReadLine();
         }
     }
