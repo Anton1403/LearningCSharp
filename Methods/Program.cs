@@ -43,6 +43,17 @@ namespace Methods
             GetData(10, 15, out int area, out int perim);
             Console.WriteLine($"Area = {area}"); // 150 is area
             Console.WriteLine($"Perimetr = {perim}"); // 50 is perimetr
+
+            Addition(1, 2, 3, 4, 5); // get sum of this numbers = 15
+            int[] array = new int[] { 1, 2, 3, 4 }; 
+            Addition(array); // // get sum of array above = 10
+            Addition(); // we dont transfer to method anything, so we will see 0(in method we have variable result, which equals 0)
+
+            Addition1(3, "hello", 21, 22); // we can transfer int, string and array
+
+            Addition2(1, 2, 3, 4, 5);
+            int[] array1 = new int[] { 1, 2, 3, 4 };
+            Addition2Mas(array1, 2);
             Console.ReadLine();
         }
 
@@ -81,6 +92,44 @@ namespace Methods
         {
             area = x * y;
             perim = (x + y) * 2;
+        }
+
+        static void Addition(params int[] integers) // if we dont know count of parameters, we well use 'params'
+        {
+            int result = 0;
+            for(int i = 0; i < integers.Length; i++)
+            {
+                result += integers[i];
+            }
+            Console.WriteLine(result);
+        }
+
+        static void Addition1(int x, string mes, params int[] integers ) // different parameters: int, string int[]
+        {
+            Console.WriteLine($"{x}, {mes}");
+            for(int i = 0; i< integers.Length; i++)
+            {
+                Console.WriteLine($"{integers[i]} ");
+            }
+        }
+
+        static void Addition2(params int[] integers)
+        {
+            int result = 0;
+            for(int i = 0; i < integers.Length; i++)
+            {
+                result += integers[i];
+            }
+            Console.WriteLine(result);
+        }
+        static void Addition2Mas(int[] integers, int k)
+        {
+            int result = 0;
+            for(int i = 0; i < integers.Length; i++)
+            {
+                result += (integers[i] * k);
+            }
+            Console.WriteLine(result);
         }
     }
 }
