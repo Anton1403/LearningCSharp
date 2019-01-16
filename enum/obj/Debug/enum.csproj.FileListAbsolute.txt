@@ -1,0 +1,10 @@
+C:\Users\anton.belenik\source\repos\Learning\enum\bin\Debug\@enum.exe.config
+C:\Users\anton.belenik\source\repos\Learning\enum\bin\Debug\@enum.exe
+C:\Users\anton.belenik\source\repos\Learning\enum\bin\Debug\@enum.pdb
+C:\Users\anton.belenik\source\repos\Learning\enum\obj\Debug\enum.csproj.CoreCompileInputs.cache
+C:\Users\anton.belenik\source\repos\Learning\enum\obj\Debug\@enum.exe
+C:\Users\anton.belenik\source\repos\Learning\enum\obj\Debug\@enum.pdb
+C:\Users\anton.belenik\source\repos\Learning\enum\obj\Debug\enum.csprojAssemblyReference.cache
+C:\Users\anton.belenik\source\repos\Learning\enum\bin\Debug\System.ValueTuple.dll
+C:\Users\anton.belenik\source\repos\Learning\enum\bin\Debug\System.ValueTuple.xml
+C:\Users\anton.belenik\source\repos\Learning\enum\obj\Debug\enum.csproj.CopyComplete

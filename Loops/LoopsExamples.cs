@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Loops
 {
-    class Program
+    class LoopsExamples
     {
         static void Main(string[] args)
         {
@@ -32,8 +32,6 @@ namespace Loops
                     continue;
                 Console.WriteLine(x);
             }
-
-
 
             Console.ReadLine();
         }

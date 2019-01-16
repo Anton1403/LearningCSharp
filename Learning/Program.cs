@@ -11,8 +11,8 @@ namespace Learning
         static void Main(string[] args)
         {
 
-            int[] numbers = new int[7];
-            Console.WriteLine("Write 7 numbers");
+            int[] numbers = new int[2];
+            Console.WriteLine("Write 2 numbers");
             for(int i = 0; i < numbers.Length; i++)
             {
                 Console.Write("{0} number is: ", i + 1);
@@ -37,6 +37,7 @@ namespace Learning
             {
                 Console.WriteLine(numbers[i]);
             }
+
 
                
             /*int[] arrayWithPositiveNumbers = { 1, 2, 3, 4, 5, -1, -3, -5, 8, 14, 32 };

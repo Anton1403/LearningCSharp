@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Methods
 {
-    class Program
+    class MethodExamples
     {
         static void Main(string[] args)
         {
@@ -54,6 +54,7 @@ namespace Methods
             Addition2(1, 2, 3, 4, 5);
             int[] array1 = new int[] { 1, 2, 3, 4 };
             Addition2Mas(array1, 2);
+
             Console.ReadLine();
         }
 
