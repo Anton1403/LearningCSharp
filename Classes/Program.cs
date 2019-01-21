@@ -88,13 +88,32 @@ namespace Classes
             kirill.DisplayInfo();
 
             Account.MinSum = 560;
-            decimal result = Account.GetSum(10, 10, 5);
             /*Console.Write("Write amount, which you want to deposit: ");
             decimal sum = Convert.ToDecimal(Console.ReadLine());
             Console.Write("Write on which period you want to deposit: ");
             int period = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine($"Amount which you'll get after {period} mounths is {Account.GetSum(sum, 10, period)}");*/
 
+            Counter c1 = new Counter { Value = 23 };
+            Counter c2 = new Counter { Value = 45 };
+            bool result = c1 > c2;
+            Console.WriteLine(result);
+            Counter c3 = c1 + c2;
+            Console.WriteLine(c3.Value);
+
+            Counter counter = new Counter { Value = 10 };
+            if(counter)
+            {
+                Console.WriteLine(true);
+            }
+            else
+            {
+                Console.WriteLine(false);
+            }
+
+            Company company = new Company {};
+            string companyName = company?.Name ?? "doesn't set";
+            Console.WriteLine("Name of company: " + companyName);
 
             Console.ReadLine();
         }
@@ -124,5 +143,33 @@ namespace Classes
                 result = result + result * rate / 100;
             return result;
         }
+    }
+    class Counter
+    {
+        public int Value { get; set; }
+        public static Counter operator +(Counter c1, Counter c2)
+        {
+            return new Counter { Value = c1.Value + c2.Value };
+        }
+        public static bool operator >(Counter c1, Counter c2)
+        {
+            return c1.Value > c2.Value;
+        }
+        public static bool operator <(Counter c1, Counter c2)
+        {
+            return c1.Value < c2.Value;
+        }
+        public static bool operator true(Counter c1)
+        {
+            return c1.Value != 0;
+        }
+        public static bool operator false(Counter c1)
+        {
+            return c1.Value == 0;
+        }
+    }
+    class Company
+    {
+        public string Name { get; set; }
     }
 }
