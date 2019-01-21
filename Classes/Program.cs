@@ -111,9 +111,27 @@ namespace Classes
                 Console.WriteLine(false);
             }
 
-            Company company = new Company {};
-            string companyName = company?.Name ?? "doesn't set";
+            Company company = new Company { Name= "Antonio's" }; // set Company Name
+            string companyName = company?.Name ?? "doesn't set"; // checking, if company name is null - write 'doesnt set', else set companyName = company.Name
             Console.WriteLine("Name of company: " + companyName);
+
+            People people = new People();
+            people[0] = new Member { Name = "Sveta" };
+            people[1] = new Member { Name = "Sam" };
+
+            Member sveta = people[0];
+            Member sam = people[1];
+            Console.WriteLine(sveta?.Name + " " + sam?.Name);
+
+            Matrix matrix = new Matrix();
+            Console.WriteLine(matrix[0, 0]); // 1
+            matrix[0, 0] = 111; // if delete set-block, u wont set this position, readonly
+            Console.WriteLine(matrix[0, 0]); // 111
+
+            people[2] = new Member { Name = "Kostya" };
+            people[3] = new Member { Name = "Vasya" };
+            Console.WriteLine(people[2].Name); // used index
+            Console.WriteLine(people["Vasya"].Name); // used name
 
             Console.ReadLine();
         }
@@ -172,4 +190,61 @@ namespace Classes
     {
         public string Name { get; set; }
     }
+    class Member
+    {
+        public string Name { get; set; }
+        public int Age { get; set; }
+    }
+    class People
+    {
+        Member[] data;
+        public People()
+        {
+            data = new Member[5];
+        }
+        public Member this [int index]
+        {
+            get
+            {
+                return data[index];
+            }
+            set
+            {
+                data[index] = value;
+            }
+        }
+        public Member this[string name]
+        {
+            get
+            {
+                Member member = null;
+                foreach(var m in data)
+                {
+                    if(m?.Name == name)
+                    {
+                        member = m;
+                        break;
+                    }
+                }
+                return member;
+            }
+        }
+    }
+
+    class Matrix
+    {
+        private int[,] numbers = new int[,] { { 1, 2, 4 }, { 2, 3, 6 }, { 3, 4, 7 } };
+        public int this[int i, int j]
+        {
+            get
+            {
+                return numbers[i, j];
+            }
+            set
+            {
+                numbers[i, j] = value;
+            }
+        }
+    }
+
 }
