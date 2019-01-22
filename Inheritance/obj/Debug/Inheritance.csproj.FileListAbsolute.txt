@@ -1,0 +1,7 @@
+C:\Users\anton.belenik\source\repos\Learning\Inheritance\bin\Debug\Inheritance.exe.config
+C:\Users\anton.belenik\source\repos\Learning\Inheritance\bin\Debug\Inheritance.exe
+C:\Users\anton.belenik\source\repos\Learning\Inheritance\bin\Debug\Inheritance.pdb
+C:\Users\anton.belenik\source\repos\Learning\Inheritance\obj\Debug\Inheritance.csprojAssemblyReference.cache
+C:\Users\anton.belenik\source\repos\Learning\Inheritance\obj\Debug\Inheritance.csproj.CoreCompileInputs.cache
+C:\Users\anton.belenik\source\repos\Learning\Inheritance\obj\Debug\Inheritance.exe
+C:\Users\anton.belenik\source\repos\Learning\Inheritance\obj\Debug\Inheritance.pdb
