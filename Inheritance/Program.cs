@@ -10,32 +10,56 @@ namespace Inheritance
     {
         static void Main(string[] args)
         {
-            Employee tom = new Employee("Tom", 23, "Microsoft Corp.");
+            Employee emp1 = new Employee("Anton Bialenik", "SPG");
+            Person person = emp1;
+            Console.WriteLine(person.Name);
+            Person person2 = new Client("Kirill Nekrevich", "SpaceBank");
+            Console.WriteLine(person2.Name);
+            Employee emp2 = (Employee)person;
+            Console.WriteLine(emp2.Name + emp2.Company);
+            object obj = new Employee("Alexey Apa", "Renault");
+            ((Person)obj).Display();
+            Person person3 = new Person("Vladislav Gu");
+            if(person3 is Employee)
+            {
+                Employee emp = (Employee)person3;
+                Console.WriteLine(emp.Company);
+            }
+            else
+            {
+                Console.WriteLine("Casting error");
+            }
+            
             Console.ReadLine();
         }
     }
     class Person
     {
-        string name;
-        int age;
+        public string Name { get; set; }
         public Person(string name)
         {
-            this.name = name;
-            Console.WriteLine("Person(string name)");
+            Name = name;
         }
-        public Person(string name, int age) : this(name)
+        public void Display()
         {
-            this.age = age;
-            Console.WriteLine("Person(string name, int age)");
+            Console.WriteLine($"Person {Name}");
         }
     }
+
     class Employee : Person
     {
-        string company;
-        public Employee(string name, int age, string company) : base(name, age)
+        public string Company { get; set; }
+        public Employee(string name, string company) : base(name)
         {
-            this.company = company;
-            Console.WriteLine("Employee(string name, int age, string company)");
+            Company = company;
+        }
+    }
+    class Client : Person
+    {
+        public string Bank { get; set; }
+        public Client(string name, string bank) : base(name)
+        {
+            Bank = bank;
         }
     }
 }
